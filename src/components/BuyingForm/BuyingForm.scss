@@ -1,0 +1,136 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+.buy-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $Gray;
+    width: 100%;
+    height: auto;
+    min-height: 95vh;
+    padding: 5vh;
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        max-width: 420px;
+        min-height: 520px;
+        background-color: $Black;
+        box-shadow: 0px 0px 8px 3px $Green;
+        border-radius: 5px;
+        padding: 10px 0;
+
+        .input-field {
+            width: 85%;
+            margin: 10px;
+            
+            input {
+                color: $White;
+            }
+            
+
+            label {
+                color: $White;
+            }
+            input[type=text]:focus + label {
+                color: $Green;
+            }
+            input[type=tel]:focus + label {
+                color: $Green;
+            }
+            input[type=email]:focus + label {
+                color: $Green;
+            }
+            input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus {
+                border-bottom: 1px solid $Green;
+                box-shadow: 0 1px 0 0 $Black;
+            }
+            input[type=text].valid, input[type=tel].valid, input[type=email].valid {
+                border-bottom: 1px solid $Green;
+                box-shadow: 0 1px 0 0 $Black;
+                
+            }
+            input[type=text].invalid, input[type=tel].invalid, input[type=email].invalid {
+                border-bottom: 1px solid red;
+                box-shadow: 0 1px 0 0 $Black;
+            }
+            .prefix {
+                color: $Gray;
+            }
+            .prefix.active {
+                color:$Green;
+            }
+            small {
+                color: red;
+            }
+
+        }
+
+        .total-amount{
+            width: 80%;
+            color: $White;
+            text-align: center;
+        }
+        span {
+            background-color: $Green;
+            width: 70% ;
+            height: 3px;
+            border-radius: 1.5px;
+        }
+        .btn-buy{
+            color: $DarkGray;
+            font-weight: 600;
+            background-color: $Green;
+            width: 80%;
+            margin-top: 10%;
+
+
+            .loop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                color: $Black;
+                animation: loop 1s ease-in-out infinite alternate ;
+
+                @keyframes loop {
+                    from{
+                        transform: rotate(0deg);
+                    } to {
+                        transform: rotate(355deg);
+                    }
+                }
+            }
+
+        }
+        .btn-getOrder {
+            @extend .btn-buy;
+            
+            .loop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                color: $Black;
+                animation: loop 1s ease-in-out infinite alternate ;
+
+                @keyframes loop {
+                    from{
+                        transform: rotate(0deg);
+                    } to {
+                        transform: rotate(355deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+    

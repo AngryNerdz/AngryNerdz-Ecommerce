@@ -1,0 +1,120 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $Gray;
+    min-height: 90vh;
+    width: 100%;
+
+    .orders-organizer {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 4px 3px $Black;
+        overflow: hidden;
+        border-radius: 5px;
+        width: 90%;
+        max-height: 80vh;
+        background-color: $Green;
+
+        .title {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 600;
+            line-height: 10px;
+            text-align: start;
+            padding-left: 5%;
+
+            @media screen and (min-width: 540px ) {
+                font-size: 3rem;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        .btn {
+            align-self: flex-end;
+            background-color: $Black;
+            margin: 0px 5px 5px 0px;
+            font-size: .7rem;
+
+            @media screen and (min-width: 540px ) {
+                font-size: 1rem
+            }
+        }
+
+        .orders-columns {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 7vh;
+            background-color: $DarkGray;
+            
+            p {
+                width: 25%;
+                text-align: center;
+                color: $White;
+            }
+        }
+    
+        .orders {
+            height: 40vh;
+            background-color: $White;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            @media screen and (min-width: 540px ) {
+                height: 60vh;
+            }
+    
+            &::-webkit-scrollbar{
+                width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $Green;
+            }
+    
+            .order-row {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border-bottom: 2px solid $Gray;
+                padding: 4px;
+                min-height: 48px;
+
+                @media screen and(min-width:300px) and (max-width: 1000px) {
+                    .id, .items {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        &:hover {
+                            position: absolute;
+                            border: solid 2px $DarkGray;
+                            width: fit-content;
+                            background-color: $Green;
+                            padding: 3px;
+                            z-index: 1;
+                            user-select: none;
+                        }
+                    }
+                }
+
+
+                &:first-child {
+                    .id {
+                        background-color: $Green;
+                    } 
+                }
+    
+                .order-info {
+                    width: 25%;
+                    text-align: center;
+
+
+                }
+            }
+        }
+    }
+}

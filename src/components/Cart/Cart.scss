@@ -1,0 +1,113 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $Gray;
+    width: 100%;
+    height: 95vh;
+    padding: 0 5vw;
+    
+    .cart {
+        width: 100%;
+        box-shadow: 0px 0px 4px 3px $Black;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .cart-columns {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            align-items: center;
+            justify-content: space-around;
+            height: 7vh;
+            background-color: $DarkGray;
+    
+            p{
+                color: $White;
+                width: 10vw;
+                text-align: center;
+
+                &:first-child {
+                    width: 2vw;
+                    text-align: start;
+                }
+            }
+        }
+        .cart-items {
+            min-height: 40vh;
+            max-height: 70vh;
+            background-color: $White;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar{
+                width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $Green;
+            }
+        }
+        .cart-total {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            height: 7vh;
+            background-color: $DarkGray;
+
+            @media screen and(min-width: 540px) {
+                padding: 0 25px;
+            }
+    
+            .total-amount{
+                color: $White;
+                width: 50%;
+                text-align: center;
+
+                @media screen and(min-width: 840px) {
+                    font-size: 2rem;
+                }
+            }
+            .btn {
+                color: $DarkGray;
+                font-weight: 600;
+                background-color: $Green;
+                min-width: 50%;
+                max-width: fit-content;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media screen and(max-width: 840px) {
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+
+}
+
+
+.cart-container-empty {
+    @extend .cart-container;
+    background-color: $DarkGray;
+    
+    .empty-cart-title {
+        color: $Green;
+        line-height: 50px;
+        text-align: center;
+    }
+    .empty-cart {
+        font-size: 10rem;
+        color: $Green;
+    }
+    .backToLanding-btn {
+        color: $DarkGray;
+        font-weight: 600;
+        background-color: $Green;
+        height: 10vh;
+    }
+}

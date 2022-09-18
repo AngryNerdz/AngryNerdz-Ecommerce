@@ -1,0 +1,58 @@
+.details-container {
+  border: solid 1px white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 4px 2px black;
+          box-shadow: 0px 0px 4px 2px black;
+  color: white;
+  margin-top: 5vh;
+  overflow: hidden;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.details-container::-webkit-scrollbar {
+  width: 7px;
+}
+
+.details-container::-webkit-scrollbar-thumb {
+  background-color: #E0FF00;
+}
+
+.details-container ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 2.2rem;
+  background-color: #373F47;
+  border-bottom: solid 1px #ffffff;
+  padding-left: 10px;
+}
+
+.details-container ul li:last-child {
+  border-bottom: none;
+}
+
+.details-container ul li:nth-child(odd) {
+  background-color: #7A7A7A;
+}
+
+.details-container ul li:nth-child(odd) .span {
+  background-color: #373F47;
+}
+
+.details-container ul li:nth-child(even) {
+  background-color: #373F47;
+}
+
+.details-container ul li:nth-child(even) .span {
+  background-color: #7A7A7A;
+}
+
+.details-container ul li .span {
+  width: 50%;
+  padding-left: 10px;
+}
+/*# sourceMappingURL=TechInfo.css.map */

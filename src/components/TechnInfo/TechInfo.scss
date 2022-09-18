@@ -1,0 +1,57 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+
+.details-container{
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 2px black;
+    color: white;
+    margin-top: 5vh;
+    overflow: hidden;
+    width: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar{
+        width: 7px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $Green;
+    }
+
+    ul{
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            line-height: 2.2rem;
+            background-color: $DarkGray;
+            border-bottom: solid 1px $White;
+            padding-left: 10px;
+
+            &:last-child{
+                border-bottom: none;
+            }
+            &:nth-child(odd){
+                background-color: $Gray;
+
+                .span{
+                    background-color: $DarkGray;
+                }
+            }
+            &:nth-child(even){
+                background-color: $DarkGray;
+
+                .span{
+                    background-color: $Gray;
+                }
+            }
+            
+            .span{
+                width: 50%;
+                padding-left: 10px;
+
+            }
+        }
+    }  
+}

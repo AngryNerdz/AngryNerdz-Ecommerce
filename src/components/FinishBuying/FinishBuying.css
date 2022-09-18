@@ -1,0 +1,49 @@
+.finish-buying {
+  background-color: #7A7A7A;
+  padding: 5px;
+}
+
+.finish-buying .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #373F47;
+  font-weight: 600;
+  background-color: #0CCE6B;
+  width: 100%;
+  -webkit-animation: appear 1.3s;
+          animation: appear 1.3s;
+}
+
+.finish-buying .btn:hover {
+  font-size: 18px;
+}
+
+.finish-buying .btn .cart {
+  margin-left: 2%;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=FinishBuying.css.map */

@@ -1,0 +1,17 @@
+@import '../assets/styles/colors.scss';
+
+.loader-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    background-color: $DarkGray;
+
+    .preloader-wrapper{
+
+        .spinner-layer{
+            border-color: $Green !important;
+        }
+    }
+}

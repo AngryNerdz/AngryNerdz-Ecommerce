@@ -1,0 +1,19 @@
+.loader-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 90vh;
+  background-color: #373F47;
+}
+
+.loader-screen .preloader-wrapper .spinner-layer {
+  border-color: #E0FF00 !important;
+}
+/*# sourceMappingURL=Loader.css.map */

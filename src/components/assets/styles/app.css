@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.Toastify__toast {
+  color: #ffffff;
+  background-color: #373F47;
+  border-radius: 5px;
+  line-height: 25px;
+  -webkit-box-shadow: 0px 0px 4px 1px #E0FF00;
+          box-shadow: 0px 0px 4px 1px #E0FF00;
+  padding: 15px;
+}
+
+.Toastify__toast .Toastify__close-button {
+  color: #E0FF00;
+  opacity: 1;
+}
+
+.Toastify__toast .Toastify__progress-bar--default {
+  background-image: none;
+  background-color: #E0FF00;
+}
+/*# sourceMappingURL=app.css.map */

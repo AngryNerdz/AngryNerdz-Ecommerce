@@ -1,0 +1,30 @@
+@import './colors.scss';
+@import './fonts.scss';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.Toastify__toast {
+
+    color: $White;
+    background-color: $DarkGray;
+    border-radius: 5px;
+    line-height: 25px;
+    box-shadow: 0px 0px 4px 1px $Green;
+    padding: 15px;
+
+    .Toastify__close-button {
+        color: $Green;
+        opacity: 1;
+    }
+
+    .Toastify__progress-bar--default {
+        background-image: none;
+        background-color: $Green;
+    }
+}
+

@@ -27,6 +27,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Css particular
 import './components/assets/styles/app.css'
+import { loadWeb3 } from './shared/e-com.jsx';
+import { latestPrice } from './store/index.jsx';
 
 
 const App = () => {
@@ -37,6 +39,8 @@ const App = () => {
     //Inicializo funcionalidades de materialize
     useEffect(() => {
         M.AutoInit();
+        loadWeb3();
+        latestPrice();
     }, []);
     //Invoco el toast de bienvenida solo si es la primera vez que entra a la pagina
     useEffect(() => {

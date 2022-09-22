@@ -1,4 +1,5 @@
 import React,{useContext,useState, useEffect} from 'react';
+import { setAlert, setGlobalState } from '../../store';
 
 // Import firebase para usar la libreria de timestamp
 import firebase from 'firebase/app';
@@ -23,8 +24,11 @@ import { useHistory } from "react-router-dom";
 //Hook-Form
 import { useForm } from 'react-hook-form';
 
+import { payWithEthers } from '../../shared/e-com'
+
 //Css particular
 import './BuyingForm.css';
+import { useGlobalState } from '../../store';
 
 const BuyingForm = () => {
 
@@ -41,6 +45,9 @@ const BuyingForm = () => {
     const [loading, setLoading] = useState(false);
     //Este state controla que se haya generado una id de compra
     const [newId, setNewId] = useState();
+
+    const [ethToUsd] = useGlobalState('ethToUsd');
+    const [buyer] = useGlobalState('connectedAccount')
 
     let history = useHistory();
 
@@ -97,6 +104,13 @@ const BuyingForm = () => {
 
     }
 
+    const handlePayWithEthers = () => {
+        const item = { ...cart, account:'0x75f8f3bd7AF510AaB2db2129B74bED666501F9Db', buyer, price: (total / ethToUsd).toFixed(4) }
+        payWithEthers(item).then((res) => {
+          if (res) setAlert('Product purchased!')
+        })
+      }
+
     const handleOrder = (data)=> {
 
         if (data) {
@@ -124,6 +138,10 @@ const BuyingForm = () => {
             
             const db = getFirestore();
             const ordersCollection = db.collection("orders");
+            
+            //console.log(cart)
+            // const item = { ...cart, buyer: order.buyer.name, account: order.buyer.email, price: total}
+            // payWithEthers(item)
 
             ordersCollection
             .add(order)
@@ -197,7 +215,7 @@ const BuyingForm = () => {
                             autoComplete="none" 
                             ref={register({
                                 required: "Ingrese su numero", pattern: {
-                                    value: /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/, message:"Ingrese un numero valido"
+                                    value: /^([2][3][8]||[9]{1})[0-9]{3}-[0-9]{4}$/, message:"Ingrese un numero valido"
                                 } 
                             })}
                         />
@@ -272,7 +290,9 @@ const BuyingForm = () => {
                             </button>
                         )
                     }
-
+                    <button onClick={handlePayWithEthers} className='waves-effect btn btn-buy'>
+                        Compra con ETH
+                    </button>
                 </form>
             </div>
         )

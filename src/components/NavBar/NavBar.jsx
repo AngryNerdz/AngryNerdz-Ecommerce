@@ -8,9 +8,14 @@ import './NavBar.css';
 
 //Routing
 import {NavLink} from 'react-router-dom'
+import { connectWallet } from '../../shared/e-com'
+import { useGlobalState, latestPrice } from '../../store'
 
 
 const NavBar = () => {
+
+    const [isLoggedIn] = useGlobalState('isLoggedIn')
+    const [connectedAccount] = useGlobalState('connectedAccount')
 
     return (
         <>  
@@ -18,8 +23,29 @@ const NavBar = () => {
                 <div className="nav-wrapper">
                     {/* El atributo exact hace que el router busque exactamente la ruta / y no todas las q empiezen con / */}
                     <NavLink to="/" exact className="brand-logo">AngryNerdz</NavLink>
+                    <a onMouseOver={latestPrice}></a>
                     <a href="/#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li>
+                            {isLoggedIn ? (
+                                <>
+                                    {connectedAccount ? null : (
+                                        <NavLink
+                                            onClick={connectWallet}
+                                            className="navlink"
+                                        > Connect Wallet 
+                                        </NavLink>
+                                    )}
+                                </>
+                            ) : (
+                                <NavLink
+                                    to='/'
+                                    onClick={connectWallet}
+                                    className="navlink"
+                                    > Connect Wallet 
+                                    </NavLink>
+                            )}
+                        </li>
                         <li>
                             <NavLink to="/categories/computacion" className="navlink"> Computación </NavLink>
                         </li>
